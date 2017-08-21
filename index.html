@@ -117,7 +117,6 @@
 		</div>
 	</div>
 	<!-- /view -->
-	<script src="js/classie.js"></script>
 	<script src="js/dummydata.js"></script>
 	<script src="js/main.js"></script>
 	<script>
@@ -139,12 +138,12 @@
 		closeMenuCtrl.addEventListener('click', closeMenu);
 
 		function openMenu() {
-			classie.add(menuEl, 'menu--open');
+            menuEl.classList.add('menu--open');
 			closeMenuCtrl.focus();
 		}
 
 		function closeMenu() {
-			classie.remove(menuEl, 'menu--open');
+            menuEl.classList.remove('menu--open');
 			openMenuCtrl.focus();
 		}
 
@@ -156,9 +155,9 @@
 
 			closeMenu();
 			gridWrapper.innerHTML = '';
-			classie.add(gridWrapper, 'content--loading');
+            gridWrapper.classList.add('content--loading');
 			setTimeout(function() {
-				classie.remove(gridWrapper, 'content--loading');
+                gridWrapper.classList.remove('content--loading');
 				gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
 			}, 700);
 		}

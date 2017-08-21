@@ -19,7 +19,7 @@
 		onEndAnimation = function( el, callback ) {
 			var onEndCallbackFn = function( ev ) {
 				if( support.animations ) {
-					if( ev.target != this ) return;
+					if( ev.target !== this ) return;
 					this.removeEventListener( animEndEventName, onEndCallbackFn );
 				}
 				if( callback && typeof callback === 'function' ) { callback.call(); }
@@ -108,7 +108,6 @@
                 menuEl.classList.add('menu__level--current');
 			}
 
-			var menu_x = menuEl.getAttribute('data-menu');
 			var links = menuEl.querySelectorAll('.menu__link');
 			links.forEach(function(linkEl, lPos) {
 				var submenu = linkEl.getAttribute('data-submenu');
@@ -117,7 +116,7 @@
 					if (submenus[pos]) {
 						submenus[pos].push(pushMe);
 					} else {
-						submenus[pos] = []
+						submenus[pos] = [];
 						submenus[pos].push(pushMe);
 					}
 				}
@@ -253,7 +252,7 @@
 		// the current menu
 		var self = this,
 			currentMenu = this.menusArr[this.current_menu].menuEl,
-			isBackNavigation = typeof clickPosition == 'undefined' ? true : false;
+			isBackNavigation = typeof clickPosition == 'undefined';
 
 		// slide out current menu items - first, set the delays for the items
 		this.menusArr[this.current_menu].menuItems.forEach(function(item, pos) {
@@ -380,7 +379,7 @@
 		}
 		// create breadcrumb
 		this._addBreadcrumb(currentMenu);
-	}
+	};
 
 	window.MLMenu = MLMenu;
 
