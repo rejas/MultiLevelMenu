@@ -105,7 +105,7 @@
 
 			// set current menu class
 			if( pos === self.current_menu ) {
-				classie.add(menuEl, 'menu__level--current');
+                menuEl.classList.add('menu__level--current');
 			}
 
 			var menu_x = menuEl.getAttribute('data-menu');
@@ -196,9 +196,9 @@
 						// add class current
 						var currentlink = self.el.querySelector('.menu__link--current');
 						if( currentlink ) {
-							classie.remove(self.el.querySelector('.menu__link--current'), 'menu__link--current');
+                            self.el.querySelector('.menu__link--current').classList.remove('menu__link--current');
 						}
-						classie.add(ev.target, 'menu__link--current');
+                        ev.target.classList.add('menu__link--current');
 						
 						// callback
 						self.options.onItemClick(ev, itemName);
@@ -261,10 +261,10 @@
 		});
 		// animation class
 		if( this.options.direction === 'r2l' ) {
-			classie.add(currentMenu, !isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
+            currentMenu.classList.add(!isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
 		}
 		else {
-			classie.add(currentMenu, isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');	
+            currentMenu.classList.add(isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');	
 		}
 	};
 
@@ -294,15 +294,15 @@
 				onEndAnimation(item, function() {
 					// reset classes
 					if( self.options.direction === 'r2l' ) {
-						classie.remove(currentMenu, !isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
-						classie.remove(nextMenuEl, !isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
+                        currentMenu.classList.remove(!isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
+                        nextMenuEl.classList.remove(!isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
 					}
 					else {
-						classie.remove(currentMenu, isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
-						classie.remove(nextMenuEl, isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
+                        currentMenu.classList.remove(isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
+                        nextMenuEl.classList.remove(isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
 					}
-					classie.remove(currentMenu, 'menu__level--current');
-					classie.add(nextMenuEl, 'menu__level--current');
+                    currentMenu.classList.remove('menu__level--current');
+                    nextMenuEl.classList.add('menu__level--current');
 
 					//reset current
 					self.current_menu = nextMenuIdx;
@@ -311,7 +311,7 @@
 					if( !isBackNavigation ) {
 						// show back button
 						if( self.options.backCtrl ) {
-							classie.remove(self.backCtrl, 'menu__back--hidden');
+                            self.backCtrl.classList.remove('menu__back--hidden');
 						}
 						
 						// add breadcrumb
@@ -319,7 +319,7 @@
 					}
 					else if( self.current_menu === 0 && self.options.backCtrl ) {
 						// hide back button
-						classie.add(self.backCtrl, 'menu__back--hidden');
+                        self.backCtrl.classList.add('menu__back--hidden');
 					}
 
 					// we can navigate again..
@@ -333,10 +333,10 @@
 
 		// animation class
 		if( this.options.direction === 'r2l' ) {
-			classie.add(nextMenuEl, !isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
+            nextMenuEl.classList.add(!isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
 		}
 		else {
-			classie.add(nextMenuEl, isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
+            nextMenuEl.classList.add(isBackNavigation ? 'animate-inFromRight' : 'animate-inFromLeft');
 		}
 	};
 
