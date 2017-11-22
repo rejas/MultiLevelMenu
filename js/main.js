@@ -128,7 +128,7 @@
 			var menu_x = menuEl.getAttribute('data-menu');
 			submenus.forEach(function(subMenuEl, menu_root) {
 				subMenuEl.forEach(function(subMenuItem, subPos) {
-					if (subMenuItem.menu == menu_x) {
+					if (subMenuItem.menu === menu_x) {
 						self.menusArr[pos].backIdx = menu_root;
 						self.menusArr[pos].name = subMenuItem.name;
 					}
@@ -146,13 +146,13 @@
 			this._addBreadcrumb(0);
 			
 			// Need to add breadcrumbs for all parents of current submenu
-			if (self.menusArr[self.current_menu].backIdx != 0 && self.current_menu != 0) {
+			if (self.menusArr[self.current_menu].backIdx !== 0 && self.current_menu !== 0) {
 				this._crawlCrumbs(self.menusArr[self.current_menu].backIdx, self.menusArr);
 				this.breadCrumbs = true;
 			}
 
 			// Create current submenu breadcrumb
-			if (self.current_menu != 0) {
+			if (self.current_menu !== 0) {
 				this._addBreadcrumb(self.current_menu);
 				this.breadCrumbs = true;
 			}
@@ -374,7 +374,7 @@
 	};
 
 	MLMenu.prototype._crawlCrumbs = function(currentMenu, menuArray) {
-		if (menuArray[currentMenu].backIdx != 0) {
+		if (menuArray[currentMenu].backIdx !== 0) {
 			this._crawlCrumbs(menuArray[currentMenu].backIdx, menuArray);
 		}
 		// create breadcrumb
