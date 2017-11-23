@@ -1,6 +1,6 @@
 {
   "name": "multilevelmenu",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "description": "A simple menu with multiple levels and an optional breadcrumb navigation and back button from codrops.",
   "author": "http://www.codrops.com",
   "license": "MIT",
