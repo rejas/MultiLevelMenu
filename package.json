@@ -6,8 +6,8 @@
   "license": "MIT",
   "repository": "https://github.com/rejas/MultiLevelMenu.git",
   "homepage": "https://github.com/rejas/MultiLevelMenu#readme",
-  "main": "./src/main.js",
-  "style": "./src/imagelightbox.min.css",
+  "main": "./dist/multilevelmenu.min.js",
+  "style": "./dist/multilevelmenu.min.css",
   "scripts": {
     "fix": "node ./node_modules/eslint/bin/eslint.js src/**/*.js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"

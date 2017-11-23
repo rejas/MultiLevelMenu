@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
@@ -33,7 +33,7 @@
         };
 
     function extend( a, b ) {
-        for( var key in b ) { 
+        for( var key in b ) {
             if( b.hasOwnProperty( key ) ) {
                 a[key] = b[key];
             }
@@ -45,7 +45,7 @@
         this.el = el;
         this.options = extend( {}, this.options );
         extend( this.options, options );
-		
+
         // the menus (<ul>´s)
         this.menus = [].slice.call(this.el.querySelectorAll('.menu__level'));
 
@@ -67,7 +67,7 @@
         });
 
         if (current_menu) {
-            this.current_menu = current_menu;	
+            this.current_menu = current_menu;
         }
 
         this._init();
@@ -82,7 +82,7 @@
         backCtrl : true,
         // delay between each menu item sliding animation
         itemsDelayInterval : 60,
-        // direction 
+        // direction
         direction : 'r2l',
         // callback: item that doesn´t have a submenu gets clicked
         // onItemClick([event], [inner HTML of the clicked item])
@@ -90,7 +90,7 @@
     };
 
     MLMenu.prototype._init = function() {
-        // iterate the existing menus and create an array of menus, 
+        // iterate the existing menus and create an array of menus,
         // more specifically an array of objects where each one holds the info of each menu element and its menu items
         this.menusArr = [];
         this.breadCrumbs = false;
@@ -100,7 +100,7 @@
         /* Loops over root level menu items */
         this.menus.forEach(function(menuEl, pos) {
             var menu = {menuEl : menuEl, menuItems : [].slice.call(menuEl.querySelectorAll('.menu__item'))};
-			
+
             self.menusArr.push(menu);
 
             // set current menu class
@@ -123,7 +123,7 @@
             });
         });
 
-        /* For each MENU, find their parent MENU */		
+        /* For each MENU, find their parent MENU */
         this.menus.forEach(function(menuEl, pos) {
             var menu_x = menuEl.getAttribute('data-menu');
             submenus.forEach(function(subMenuEl, menu_root) {
@@ -144,7 +144,7 @@
             this.el.insertBefore(this.breadcrumbsCtrl, this.el.firstChild);
             // add initial breadcrumb
             this._addBreadcrumb(0);
-			
+
             // Need to add breadcrumbs for all parents of current submenu
             if (self.menusArr[self.current_menu].backIdx !== 0 && self.current_menu !== 0) {
                 this._crawlCrumbs(self.menusArr[self.current_menu].backIdx, self.menusArr);
@@ -162,7 +162,7 @@
         if (this.options.backCtrl) {
             this.backCtrl = document.createElement('button');
             if (this.breadCrumbs) {
-                this.backCtrl.className = 'menu__back';	
+                this.backCtrl.className = 'menu__back';
             } else {
                 this.backCtrl.className = 'menu__back menu__back--hidden';
             }
@@ -180,7 +180,7 @@
 
         for(var i = 0, len = this.menusArr.length; i < len; ++i) {
             this.menusArr[i].menuItems.forEach(function(item, pos) {
-                item.querySelector('a').addEventListener('click', function(ev) { 
+                item.querySelector('a').addEventListener('click', function(ev) {
                     var submenu = ev.target.getAttribute('data-submenu'),
                         itemName = ev.target.innerHTML,
                         subMenuEl = self.el.querySelector('ul[data-menu="' + submenu + '"]');
@@ -198,14 +198,14 @@
                             self.el.querySelector('.menu__link--current').classList.remove('menu__link--current');
                         }
                         ev.target.classList.add('menu__link--current');
-						
+
                         // callback
                         self.options.onItemClick(ev, itemName);
                     }
                 });
             });
         }
-		
+
         // back navigation
         if( this.options.backCtrl ) {
             this.backCtrl.addEventListener('click', function() {
@@ -219,7 +219,7 @@
             return false;
         }
         this.isAnimating = true;
-		
+
         // save "parent" menu index for back navigation
         this.menusArr[this.menus.indexOf(subMenuEl)].backIdx = this.current_menu;
         // save "parent" menu´s name
@@ -263,16 +263,16 @@
             currentMenu.classList.add(!isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
         }
         else {
-            currentMenu.classList.add(isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');	
+            currentMenu.classList.add(isBackNavigation ? 'animate-outToLeft' : 'animate-outToRight');
         }
     };
 
     MLMenu.prototype._menuIn = function(nextMenuEl, clickPosition) {
         var self = this,
-            // the current menu
+        // the current menu
             currentMenu = this.menusArr[this.current_menu].menuEl,
             isBackNavigation = typeof clickPosition == 'undefined' ? true : false,
-            // index of the nextMenuEl
+        // index of the nextMenuEl
             nextMenuIdx = this.menus.indexOf(nextMenuEl),
 
             nextMenu = this.menusArr[nextMenuIdx],
@@ -312,7 +312,7 @@
                         if( self.options.backCtrl ) {
                             self.backCtrl.classList.remove('menu__back--hidden');
                         }
-						
+
                         // add breadcrumb
                         self._addBreadcrumb(nextMenuIdx);
                     }
@@ -358,7 +358,7 @@
                 return false;
             }
             self.isAnimating = true;
-			
+
             // current menu slides out
             self._menuOut();
             // next menu slides in
