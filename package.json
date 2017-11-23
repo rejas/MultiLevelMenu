@@ -4,8 +4,8 @@
   "description": "A simple menu with multiple levels and an optional breadcrumb navigation and back button from codrops.",
   "author": "http://www.codrops.com",
   "license": "MIT",
-  "repository": "https://github.com/rejas/MultiLevelMenu.git",
-  "homepage": "https://github.com/rejas/MultiLevelMenu#readme",
+  "repository": "https://github.com/rejas/multilevelmenu.git",
+  "homepage": "https://github.com/rejas/multilevelmenu#readme",
   "main": "./dist/multilevelmenu.min.js",
   "style": "./dist/multilevelmenu.min.css",
   "scripts": {
