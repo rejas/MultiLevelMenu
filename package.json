@@ -1,6 +1,6 @@
 {
   "name": "multilevelmenu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple menu with multiple levels and an optional breadcrumb navigation and back button from codrops.",
   "main": "js/main.js",
   "scripts": {
