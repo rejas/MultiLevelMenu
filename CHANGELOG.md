@@ -7,10 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- Restructured project 
+
 ## [1.0.1] - 2017-11-22
 
 - Removed classie library
-- Cleanup javascript code
+- Cleaned up javascript code
 
 ## [1.0.0] - 2017-08-21
 
@@ -20,7 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Forked original code from codrops
 
-[Unreleased]: https://github.com/rejas/imagelightbox/compare/1.0.1...HEAD
-[1.0.1]: https://github.com/rejas/imagelightbox/compare/1.0.0...1.0.1
-[1.0.0]: https://github.com/rejas/imagelightbox/compare/0.9.0...1.0.0
-[0.9.0]: https://github.com/rejas/multilevelmenu/commit/e9508983c033fd61cf25ce45f1b722d1aa2ed212...v0.9.0
+[Unreleased]: https://github.com/rejas/multilevelmenu/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/rejas/multilevelmenu/compare/1.0.0...1.0.1
+[1.0.0]: https://github.com/rejas/multilevelmenu/compare/0.9.0...1.0.0
+[0.9.0]: https://github.com/rejas/multilevelmenu/compare/e9508983c033fd61cf25ce45f1b722d1aa2ed212...0.9.0
