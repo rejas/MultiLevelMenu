@@ -2,18 +2,25 @@
   "name": "multilevelmenu",
   "version": "1.0.0",
   "description": "A simple menu with multiple levels and an optional breadcrumb navigation and back button from codrops.",
-  "main": "js/main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://rejas@github.com/rejas/MultiLevelMenu.git"
-  },
   "author": "http://www.codrops.com",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rejas/MultiLevelMenu/issues"
+  "repository": "https://github.com/rejas/MultiLevelMenu.git",
+  "homepage": "https://github.com/rejas/MultiLevelMenu#readme",
+  "main": "./src/main.js",
+  "style": "./src/imagelightbox.min.css",
+  "scripts": {
+    "fix": "node ./node_modules/eslint/bin/eslint.js src/**/*.js --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/rejas/MultiLevelMenu#readme"
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-csslint": "^1.0.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-lintspaces": "^0.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
 }
