@@ -1,5 +1,4 @@
 /**
- * main.js
  * http://www.codrops.com
  *
  * Licensed under the MIT license.
@@ -8,7 +7,6 @@
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
-
 (function(window) {
 
     'use strict';
@@ -269,10 +267,10 @@
 
     MLMenu.prototype._menuIn = function(nextMenuEl, clickPosition) {
         var self = this,
-        // the current menu
+            // the current menu
             currentMenu = this.menusArr[this.current_menu].menuEl,
             isBackNavigation = typeof clickPosition == 'undefined' ? true : false,
-        // index of the nextMenuEl
+            // index of the nextMenuEl
             nextMenuIdx = this.menus.indexOf(nextMenuEl),
 
             nextMenu = this.menusArr[nextMenuIdx],
