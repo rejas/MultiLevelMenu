@@ -1,34 +1,24 @@
-/**
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2015, Codrops
- * http://www.codrops.com
- */
+//
+// http://www.codrops.com
+//
+// Licensed under the MIT license.
+// http://www.opensource.org/licenses/mit-license.php
+//
+// Copyright 2015, Codrops
+// http://www.codrops.com
+//
 (function(window) {
 
     'use strict';
 
-    var support = { animations : Modernizr.cssanimations },
-        animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
-        animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
-        onEndAnimation = function( el, callback ) {
-            var onEndCallbackFn = function( ev ) {
-                if( support.animations ) {
-                    if( ev.target !== this ) return;
-                    this.removeEventListener( animEndEventName, onEndCallbackFn );
-                }
-                if( callback && typeof callback === 'function' ) { callback.call(); }
-            };
-            if( support.animations ) {
-                el.addEventListener( animEndEventName, onEndCallbackFn );
-            }
-            else {
-                onEndCallbackFn();
-            }
+    var onEndAnimation = function( el, callback ) {
+        var onEndCallbackFn = function( ev ) {
+            if( ev.target !== this ) return;
+            this.removeEventListener( 'animationend', onEndCallbackFn );
+            if( callback && typeof callback === 'function' ) { callback.call(); }
         };
+        el.addEventListener( 'animationend', onEndCallbackFn );
+    };
 
     function extend( a, b ) {
         for( var key in b ) {
@@ -55,7 +45,7 @@
         var current_menu;
         this.menus.forEach(function(menuEl, pos) {
             var items = menuEl.querySelectorAll('.menu__item');
-            items.forEach(function(itemEl, iPos) {
+            items.forEach(function(itemEl) {
                 var currentLink = itemEl.querySelector('.menu__link--current');
                 if (currentLink) {
                     // This is the actual menu__level that should have current
@@ -82,9 +72,9 @@
         itemsDelayInterval : 60,
         // direction
         direction : 'r2l',
-        // callback: item that doesn´t have a submenu gets clicked
+        // callback: item that doesn't have a submenu gets clicked
         // onItemClick([event], [inner HTML of the clicked item])
-        onItemClick : function(ev, itemName) { return false; }
+        onItemClick : function() { return false; }
     };
 
     MLMenu.prototype._init = function() {
@@ -107,7 +97,7 @@
             }
 
             var links = menuEl.querySelectorAll('.menu__link');
-            links.forEach(function(linkEl, lPos) {
+            links.forEach(function(linkEl) {
                 var submenu = linkEl.getAttribute('data-submenu');
                 if (submenu) {
                     var pushMe = {'menu':submenu, 'name': linkEl.innerHTML };
@@ -125,7 +115,7 @@
         this.menus.forEach(function(menuEl, pos) {
             var menu_x = menuEl.getAttribute('data-menu');
             submenus.forEach(function(subMenuEl, menu_root) {
-                subMenuEl.forEach(function(subMenuItem, subPos) {
+                subMenuEl.forEach(function(subMenuItem) {
                     if (subMenuItem.menu === menu_x) {
                         self.menusArr[pos].backIdx = menu_root;
                         self.menusArr[pos].name = subMenuItem.name;
@@ -250,7 +240,7 @@
         // the current menu
         var self = this,
             currentMenu = this.menusArr[this.current_menu].menuEl,
-            isBackNavigation = typeof clickPosition == 'undefined';
+            isBackNavigation = typeof clickPosition === 'undefined';
 
         // slide out current menu items - first, set the delays for the items
         this.menusArr[this.current_menu].menuItems.forEach(function(item, pos) {
@@ -269,12 +259,11 @@
         var self = this,
             // the current menu
             currentMenu = this.menusArr[this.current_menu].menuEl,
-            isBackNavigation = typeof clickPosition == 'undefined' ? true : false,
+            isBackNavigation = typeof clickPosition === 'undefined' ? true : false,
             // index of the nextMenuEl
             nextMenuIdx = this.menus.indexOf(nextMenuEl),
 
             nextMenu = this.menusArr[nextMenuIdx],
-            nextMenuEl = nextMenu.menuEl,
             nextMenuItems = nextMenu.menuItems,
             nextMenuItemsTotal = nextMenuItems.length;
 
