@@ -37,7 +37,7 @@ gulp.task('eslint', function() {
     return gulp.src('src/multilevelmenu.js')
         .pipe(eslint())
         .pipe(eslint.format())
-        //.pipe(eslint.failAfterError());
+        .pipe(eslint.failAfterError());
 });
 
 gulp.task('copy:js', ['editorconfig', 'eslint'], function() {

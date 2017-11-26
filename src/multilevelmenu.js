@@ -354,7 +354,7 @@
 
             // remove breadcrumbs that are ahead
             var siblingNode;
-            while (siblingNode = bc.nextSibling) {
+            while ((siblingNode = bc.nextSibling)) {
                 self.breadcrumbsCtrl.removeChild(siblingNode);
             }
         });

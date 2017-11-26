@@ -1,3 +1,5 @@
 {
-    "order-alphabetical":   false
+    "order-alphabetical":       false,
+    "outline-none":             false,
+    "unqualified-attributes":   false
 }

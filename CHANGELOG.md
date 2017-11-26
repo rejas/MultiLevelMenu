@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Restructured project 
 - Removed modernizr fallback for cssanimations
+- Fixed csslint/eslint warnings
 
 ## [1.0.1] - 2017-11-22
 

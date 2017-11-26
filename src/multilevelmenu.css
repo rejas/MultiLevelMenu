@@ -117,10 +117,12 @@
     color: #5c5edc;
 }
 
+/* csslint ignore:start */
 [class^='animate-'],
 [class*=' animate-'] {
     visibility: visible;
 }
+/* csslint ignore:end */
 
 .animate-outToRight .menu__item {
     animation: outToRight 0.6s both cubic-bezier(0.7, 0, 0.3, 1);
