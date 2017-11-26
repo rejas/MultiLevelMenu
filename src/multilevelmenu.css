@@ -58,7 +58,7 @@
     content: '\2026';
     position: absolute;
     right: 0;
-    padding: 0 1.25em;
+    padding: 0 .25em;
     color: #2a2b30;
 }
 
@@ -180,17 +180,13 @@
     position: absolute;
     z-index: 100;
     top: 0;
-    right: 1.25em;
+    right: 0.25em;
     margin: 0;
     padding: 1.365em 0.65em 0 0;
     cursor: pointer;
     color: #2a2b30;
     border: none;
     background: none;
-}
-
-.menu__back .icon--arrow-left::after {
-    content:'\2190';
 }
 
 .menu__back--hidden {
@@ -203,6 +199,20 @@
     color: #fff;
     outline: none;
 }
+
+/* Icons */
+
+.icon--cross::before {
+    content:'\2715';
+}
+
+.icon--menu::before {
+    content:'\2630';
+}
+
+.icon--arrow-left::after {
+     content:'\2190';
+ }
 
 /* Open and close buttons */
 
@@ -253,5 +263,9 @@
     }
     .menu--open {
         transform: translate3d(0, 0, 0);
+    }
+
+    .menu__back {
+        right: 2.25rem;
     }
 }
