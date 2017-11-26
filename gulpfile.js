@@ -21,10 +21,7 @@ gulp.task('copy:css', ['csslint'], function() {
 
 gulp.task('minify:css', ['copy:css'], function() {
     return gulp.src('src/multilevelmenu.css')
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions', 'ie >= 9', 'Firefox ESR', 'Android >= 2.3'],
-            cascade: false
-        }))
+        .pipe(autoprefixer())
         .pipe(cleanCSS())
         .pipe(rename('multilevelmenu.min.css'))
         .pipe(gulp.dest('dist/'));
