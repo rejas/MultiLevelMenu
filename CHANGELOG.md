@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- Removed feather icons from source, only use them in demo
+
 ## [1.1.0] - 2017-11-26
 
 - Restructured project 

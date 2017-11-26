@@ -1,0 +1,44 @@
+/* Icons (made with Icomoon.io) */
+
+@font-face {
+    font-family: 'feather';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/feather/feather.eot?1gafuo');
+    src: url('../fonts/feather/feather.eot?1gafuo#iefix') format('embedded-opentype'), url('../fonts/feather/feather.woff2?1gafuo') format('woff2'), url('../fonts/feather/feather.ttf?1gafuo') format('truetype'), url('../fonts/feather/feather.woff?1gafuo') format('woff'), url('../fonts/feather/feather.svg?1gafuo#feather') format('svg');
+}
+
+.theme--feather .icon {
+    font-family: 'feather';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-transform: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none;
+}
+
+.theme--feather .icon--arrow-left:after {
+    content: '\e901';
+}
+
+.theme--feather .icon--menu:before {
+    content: '\e903';
+}
+
+.theme--feather .icon--cross:before {
+    content: '\e117';
+}
+
+.theme--feather .menu__link[data-submenu]::after {
+    content: '\e904';
+    font-family: 'feather';
+}
+
+.theme--feather .menu__breadcrumbs a:not(:last-child)::after {
+    content: '\e902';
+    font-family: 'feather';
+}

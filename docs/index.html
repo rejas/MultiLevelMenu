@@ -12,6 +12,8 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- food icons -->
 	<link rel="stylesheet" type="text/css" href="css/organicfoodicons.css" />
+    <!-- feather icons -->
+    <link rel="stylesheet" type="text/css" href="css/feathericons.css" />
 	<!-- demo styles -->
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<!-- menu styles -->
@@ -20,7 +22,7 @@
 
 <body>
 	<!-- Main container -->
-	<div class="container">
+	<div class="container theme--feather">
 		<!-- Blueprint header -->
 		<header class="bp-header cf">
 			<div class="dummy-logo">
@@ -112,10 +114,10 @@
 	(function() {
 		var menuEl = document.getElementById('ml-menu'),
 			mlmenu = new MLMenu(menuEl, {
-				// breadcrumbsCtrl : true, // show breadcrumbs
-				// initialBreadcrumb : 'all', // initial breadcrumb text
-				backCtrl : false, // show back button
-				// itemsDelayInterval : 60, // delay between each menu item sliding animation
+				breadcrumbsCtrl : true, // show breadcrumbs
+                initialBreadcrumb : 'all', // initial breadcrumb text
+				backCtrl : true, // show back button
+				itemsDelayInterval : 60, // delay between each menu item sliding animation
 				onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
 			});
 
