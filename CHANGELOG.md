@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.2] - 2018-03-01
+
+- Switched build process to gulp 4
+
 ## [1.1.1] - 2017-11-26
 
 - Removed feather icons from source, only use them in demo
@@ -31,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Forked original code from codrops
 
 [Unreleased]: https://github.com/rejas/multilevelmenu/compare/1.1.1...HEAD
+[1.1.1]: https://github.com/rejas/multilevelmenu/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/rejas/multilevelmenu/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/rejas/multilevelmenu/compare/1.0.1...1.1.0
 [1.0.1]: https://github.com/rejas/multilevelmenu/compare/1.0.0...1.0.1
