@@ -14,18 +14,18 @@ gulp.task('csslint', function() {
         .pipe(csslint.formatter());
 });
 
-gulp.task('copy:css', ['csslint'], function() {
+gulp.task('copy:css', gulp.series('csslint', function() {
     return gulp.src('src/multilevelmenu.css')
         .pipe(gulp.dest('docs/css/'));
-});
+}));
 
-gulp.task('minify:css', ['copy:css'], function() {
+gulp.task('minify:css', gulp.series('copy:css', function() {
     return gulp.src('src/multilevelmenu.css')
         .pipe(autoprefixer())
         .pipe(cleanCSS())
         .pipe(rename('multilevelmenu.min.css'))
         .pipe(gulp.dest('dist/'));
-});
+}));
 
 gulp.task('editorconfig', function() {
     return gulp.src('src/multilevelmenu.js')
@@ -40,31 +40,32 @@ gulp.task('eslint', function() {
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('copy:js', ['editorconfig', 'eslint'], function() {
+gulp.task('copy:js',  gulp.series('editorconfig', 'eslint', function() {
     return gulp.src('src/multilevelmenu.js')
         .pipe(gulp.dest('docs/js/'));
-});
+}));
 
-gulp.task('minify:js', ['copy:js'], function() {
+gulp.task('minify:js', gulp.series('copy:js', function() {
     return gulp.src('src/multilevelmenu.js')
         .pipe(uglify())
         .pipe(rename('multilevelmenu.min.js'))
         .pipe(gulp.dest('dist/'));
+}));
+
+gulp.task('build', gulp.parallel('minify:css', 'minify:js'));
+
+gulp.task('watch', function(done) {
+    gulp.watch(['docs/*.html','src/**/*'], gulp.series('build'));
+    done();
 });
 
-gulp.task('watch', function() {
-    gulp.watch([
-        'docs/*.html',
-        'src/**/*'
-    ], ['build']);
-});
-
-gulp.task('serve', ['build', 'watch'], function() {
+gulp.task('serve', gulp.parallel('build', 'watch', function(done) {
     connect.server({
         livereload: true
     });
-});
+    done();
+}));
 
-gulp.task('build', ['minify:css', 'minify:js']);
+gulp.task('default', gulp.series('build'));
 
-gulp.task('default', ['build']);
+gulp.task('dev', gulp.series('serve'));
