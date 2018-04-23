@@ -50,7 +50,6 @@
     display: block;
     padding: 1em 2.5em 1em 1.5em;
     color: #bdbdbd;
-    -webkit-transition: color 0.1s;
     transition: color 0.1s;
 }
 

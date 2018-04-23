@@ -259,7 +259,7 @@
         var self = this,
             // the current menu
             currentMenu = this.menusArr[this.current_menu].menuEl,
-            isBackNavigation = typeof clickPosition === 'undefined' ? true : false,
+            isBackNavigation = typeof clickPosition === 'undefined',
             // index of the nextMenuEl
             nextMenuIdx = this.menus.indexOf(nextMenuEl),
 
