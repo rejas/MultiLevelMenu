@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0] - 2018-06-01
+
+- Dropped IE10 support, fixed IE11
+
 ## [1.1.3] - 2018-04-23
 
 - Cleaned up code a little
@@ -38,7 +42,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Forked original code from codrops
 
-[Unreleased]: https://github.com/rejas/multilevelmenu/compare/1.1.3...HEAD
+[Unreleased]: https://github.com/rejas/multilevelmenu/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/rejas/multilevelmenu/compare/1.1.3...1.2.0
 [1.1.3]: https://github.com/rejas/multilevelmenu/compare/1.1.2...1.1.3
 [1.1.2]: https://github.com/rejas/multilevelmenu/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/rejas/multilevelmenu/compare/1.1.0...1.1.1
