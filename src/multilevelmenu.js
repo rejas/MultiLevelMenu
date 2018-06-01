@@ -11,6 +11,15 @@
 
     'use strict';
 
+    if (window.NodeList && !NodeList.prototype.forEach) {
+        NodeList.prototype.forEach = function (callback, thisArg) {
+            thisArg = thisArg || window;
+            for (var i = 0; i < this.length; i++) {
+                callback.call(thisArg, this[i], i, this);
+            }
+        };
+    }
+
     var onEndAnimation = function( el, callback ) {
         var onEndCallbackFn = function( ev ) {
             if( ev.target !== this ) return;

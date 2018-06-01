@@ -14,7 +14,7 @@
   },
   "browserslist": [
     "last 2 versions",
-    "ie >= 10",
+    "ie >= 11",
     "Android >= 4.4"
   ],
   "devDependencies": {
