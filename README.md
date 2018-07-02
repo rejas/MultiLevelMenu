@@ -1,6 +1,8 @@
 Blueprint: Multi-Level Menu
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rejas/multilevelmenu.svg)](https://greenkeeper.io/)
+
 A simple multi-level menu with delayed item animations and optional breadcrumb navigation and back button. 
 
 [Article on Codrops](http://tympanus.net/codrops/?p=25521)
