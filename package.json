@@ -18,7 +18,7 @@
     "Android >= 4.4"
   ],
   "devDependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-connect": "^5.5.0",
